@@ -1,34 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root.jsx";
+import App from "./App.jsx";
 import ErrorPage from "./routes/error-page.jsx";
 import Posts from "./routes/Posts.jsx";
 import Tracker from "./routes/Tracker.jsx";
 import Lists from "./routes/Lists.jsx";
+import { StyledEngineProvider } from "@mui/material";
+import Layout from "./components/Layout.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Layout><App /></Layout>,
     errorElement: <ErrorPage />,
   },
   {
     path: "/posts",
-    element: <Posts />,
+    element: <Layout><Posts /></Layout>,
   },
   {
     path: "/lists",
-    element: <Lists />,
+    element: <Layout><Lists /></Layout>,
   },
   {
     path: "/tracker",
-    element: <Tracker />,
+    element: <Layout><Tracker /></Layout>,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <StyledEngineProvider injectFirst>
+      <RouterProvider router={router} />
+    </StyledEngineProvider>
   </React.StrictMode>
 );
