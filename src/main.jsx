@@ -12,20 +12,36 @@ import Layout from "./components/Layout.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout><App /></Layout>,
+    element: (
+      <Layout>
+        <App />
+      </Layout>
+    ),
     errorElement: <ErrorPage />,
   },
   {
     path: "/posts",
-    element: <Layout><Posts /></Layout>,
+    element: (
+      <Layout>
+        <Posts />
+      </Layout>
+    ),
   },
   {
     path: "/lists",
-    element: <Layout><Lists /></Layout>,
+    element: (
+      <Layout>
+        <Lists />
+      </Layout>
+    ),
   },
   {
     path: "/tracker",
-    element: <Layout><Tracker /></Layout>,
+    element: (
+      <Layout>
+        <Tracker />
+      </Layout>
+    ),
   },
 ]);
 
