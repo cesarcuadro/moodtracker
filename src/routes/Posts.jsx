@@ -12,6 +12,7 @@ const Posts = () => {
       <form>
         <textarea
         onChange={handleTextAreaChange}
+        placeholder="What is on your mind?"
         >{text}</textarea>
       </form>
       <button
